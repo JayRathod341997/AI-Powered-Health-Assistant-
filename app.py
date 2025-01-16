@@ -25,6 +25,8 @@ def healthcare_chatbot(user_input):
     else:
         # For other inputs, use the Hugging Face model to generate a response
         response = chatbot(user_input, max_length=100, num_return_sequences=1)
+        # Specifies the maximum length of the generated text response, including the input and the generated tokens.
+        # If set to 3, the model generates three different possible responses based on the input.
         return response[0]['generated_text']
 
 
